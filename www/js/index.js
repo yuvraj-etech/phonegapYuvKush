@@ -1,5 +1,7 @@
-angular.module('networkApp', ['ngCordova']).controller('mainCtrl', function($scope, $rootScope, $cordovaNetwork, $cordovaAppVersion {
-            console.log("bammmmmm");
+angular.module('networkApp', ['ngCordova'])
+        .controller('mainCtrl', function($scope, $rootScope, $cordovaNetwork, 
+            $cordovaAppVersion,$cordovaDevice) {
+           
             document.addEventListener("deviceready", function() {
                 $scope.var = "Thank You";
                 console.log($scope.isOnline);
@@ -17,14 +19,14 @@ angular.module('networkApp', ['ngCordova']).controller('mainCtrl', function($sco
                     $scope.networkType = $cordovaNetwork.getNetwork();
                     $scope.nType = $scope.networkType;
                 });
-                $cordovaAppVersion.getVersionNumber().then(function(version) {
-                    console.log(version);
-                    $scope.appVersn = version;
-                });
-                $cordovaAppVersion.getVersionCode().then(function(build) {
-                    console.log(build);
-                    $scope.appBuild = build;
-                });
+                
+                $scope.appVersn=AppVersion.version;
+                console.log(AppVersion.version);  
+                console.log(AppVersion.build); 
+                $scope.appBuild=AppVersion.build;
+
+
+                $scope.device = $cordovaDevice.getDevice();
 
             }, false);
 

@@ -15,6 +15,12 @@
         },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.excellence.networkApp"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.excellence.networkApp"
+        },
+        "cordova-plugin-appversion": {
+            "PACKAGE_NAME": "com.excellence.networkApp"
         }
     },
     "dependent_plugins": {}
