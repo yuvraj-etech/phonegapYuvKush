@@ -19,6 +19,10 @@
                         {
                             "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -28,6 +32,16 @@
                     "/*": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"RareloopAppVersion\"><param name=\"android-package\" value=\"com.rareloop.cordova.appversion.RareloopAppVersion\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -43,6 +57,12 @@
             "PACKAGE_NAME": "com.excellence.networkApp"
         },
         "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.excellence.networkApp"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.excellence.networkApp"
+        },
+        "cordova-plugin-appversion": {
             "PACKAGE_NAME": "com.excellence.networkApp"
         }
     },
@@ -77,6 +97,22 @@
             "pluginId": "cordova-plugin-splashscreen",
             "clobbers": [
                 "navigator.splashscreen"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-device/www/device.js",
+            "id": "cordova-plugin-device.device",
+            "pluginId": "cordova-plugin-device",
+            "clobbers": [
+                "device"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-appversion/www/app-version.js",
+            "id": "cordova-plugin-appversion.RareloopAppVersion",
+            "pluginId": "cordova-plugin-appversion",
+            "clobbers": [
+                "AppVersion"
             ]
         }
     ]

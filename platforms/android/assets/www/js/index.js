@@ -1,23 +1,33 @@
-angular.module('networkApp',['ngCordova']).controller('mainCtrl', function($scope,$rootScope, $cordovaNetwork) {
-console.log("bammmmmm");
-    document.addEventListener("deviceready", function () {
-  $scope.var="Thank You";
-console.log($scope.isOnline);
+angular.module('networkApp', ['ngCordova'])
+        .controller('mainCtrl', function($scope, $rootScope, $cordovaNetwork, 
+            $cordovaAppVersion,$cordovaDevice) {
+           
+            document.addEventListener("deviceready", function() {
+                $scope.var = "Thank You";
+                console.log($scope.isOnline);
 
-$rootScope.$on('$cordovaNetwork:online', function(event, networkState){
-            console.log("went online");
-            $scope.status = "Online";
-            $scope.networkType=$cordovaNetwork.getNetwork();
-            $scope.nType=$scope.networkType;
-          });
- 
-          $rootScope.$on('$cordovaNetwork:offline', function(event, networkState){
-            console.log("went offline");
-             $scope.status = "Offline";
-             $scope.networkType=$cordovaNetwork.getNetwork();
-            $scope.nType=$scope.networkType;
-          });
+                $rootScope.$on('$cordovaNetwork:online', function(event, networkState) {
+                    console.log("went online");
+                    $scope.status = "Online";
+                    $scope.networkType = $cordovaNetwork.getNetwork();
+                    $scope.nType = $scope.networkType;
+                });
 
-}, false);
+                $rootScope.$on('$cordovaNetwork:offline', function(event, networkState) {
+                    console.log("went offline");
+                    $scope.status = "Offline";
+                    $scope.networkType = $cordovaNetwork.getNetwork();
+                    $scope.nType = $scope.networkType;
+                });
+                
+                $scope.appVersn=AppVersion.version;
+                console.log(AppVersion.version);  
+                console.log(AppVersion.build); 
+                $scope.appBuild=AppVersion.build;
 
-});
+
+                $scope.device = $cordovaDevice.getDevice();
+
+            }, false);
+
+        });

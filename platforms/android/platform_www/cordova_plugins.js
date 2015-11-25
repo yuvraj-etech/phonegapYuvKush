@@ -30,6 +30,22 @@ module.exports = [
         "clobbers": [
             "navigator.splashscreen"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-device/www/device.js",
+        "id": "cordova-plugin-device.device",
+        "pluginId": "cordova-plugin-device",
+        "clobbers": [
+            "device"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-appversion/www/app-version.js",
+        "id": "cordova-plugin-appversion.RareloopAppVersion",
+        "pluginId": "cordova-plugin-appversion",
+        "clobbers": [
+            "AppVersion"
+        ]
     }
 ];
 module.exports.metadata = 
