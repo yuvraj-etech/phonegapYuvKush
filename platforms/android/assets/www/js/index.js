@@ -1,7 +1,7 @@
 angular.module('networkApp', ['ngCordova'])
         .controller('mainCtrl', function($scope, $rootScope, $cordovaNetwork, 
             $cordovaAppVersion,$cordovaDevice) {
-           
+            
             document.addEventListener("deviceready", function() {
                 $scope.var = "Thank You";
                 console.log($scope.isOnline);

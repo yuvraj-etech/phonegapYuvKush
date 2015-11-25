@@ -17,9 +17,8 @@
     },
     "cordova-plugin-splashscreen": {
         "source": {
-            "type": "git",
-            "url": "https://github.com/apache/cordova-plugin-splashscreen",
-            "subdir": "."
+            "type": "registry",
+            "id": "cordova-plugin-splashscreen"
         },
         "is_top_level": true,
         "variables": {}

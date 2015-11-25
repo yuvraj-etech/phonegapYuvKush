@@ -19,10 +19,10 @@
         <param name="android-package" value="com.rareloop.cordova.appversion.RareloopAppVersion" />
     </feature>
     <allow-intent href="market:*" />
-    <splash density="port-hdpi" src="res/screen/android/splash-port-hdpi.png" />
-    <splash density="port-ldpi" src="res/screen/android/splash-port-ldpi.png" />
-    <splash density="port-mdpi" src="res/screen/android/splash-port-mdpi.png" />
-    <splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png" />
+    <splash density="port-hdpi" src="res/screen/android/screen-port-hdpi.png" />
+    <splash density="port-ldpi" src="res/screen/android/screen-port-ldpi.png" />
+    <splash density="port-mdpi" src="res/screen/android/screen-port-mdpi.png" />
+    <splash density="port-xhdpi" src="res/screen/android/screen-port-xhdpi.png" />
     <name>networkApp</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -38,6 +38,6 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="10000" />
+    <preference name="SplashScreen" value="img/splash.png" />
+    <preference name="SplashScreenDelay" value="30000" />
 </widget>
