@@ -1,14 +1,10 @@
-angular.module('networkApp', ['ngCordova'])
+angular.module('networkApp', ['ngCordova','GoogleLoginService','ionic'])
         .controller('mainCtrl', function($scope, $rootScope, $cordovaNetwork, 
 
-            $cordovaAppVersion,$cordovaDevice) {
-            
-
-            $cordovaAppVersion,$cordovaDevice,$cordovaDialogs) {
+            $cordovaAppVersion,$cordovaDevice,$cordovaDialogs, $cordovaSplashscreen,googleLogin) {
            
-
+                
             document.addEventListener("deviceready", function() {
-                $scope.var = "Thank You";
                 console.log($scope.isOnline);
 
                 $rootScope.$on('$cordovaNetwork:online', function(event, networkState) {
@@ -24,20 +20,34 @@ angular.module('networkApp', ['ngCordova'])
                     $scope.networkType = $cordovaNetwork.getNetwork();
                     $scope.nType = $scope.networkType;
                 }); 
-                $scope.appVersn=AppVersion.version;
+                $scope.appVersn = AppVersion.version;
                 console.log(AppVersion.version);  
                 console.log(AppVersion.build); 
-                $scope.appBuild=AppVersion.build;
+                $scope.appBuild = AppVersion.build;
                 $scope.get=function()
                 {
-                $cordovaDialogs.alert('Application Version',$scope.appVersn,'ok')
+                $cordovaDialogs.alert($scope.appVersn,'Application Version','ok')
                 .then(function() {
                 console.log($scope.appVersn);
                 });
                 } ; 
-
                 $scope.device = $cordovaDevice.getDevice();
+                $scope.getDeviceInfo = function(){
+                $cordovaDialogs.alert($scope.device,'Device Information','ok')
+                .then(function() {
+                console.log($scope.device);
+                });
+                };
+
+
+                $scope.googleLogin = function () {
+                var promise = googleLogin.startLogin();
+                promise.then(function (data) {
+                    $scope.googleData = data;
+                }, function (data) {
+                    $scope.googleData = data;
+                });
+            }
 
             }, false);
-
         });

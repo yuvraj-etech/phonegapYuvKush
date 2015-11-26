@@ -7,7 +7,16 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-whitelist": {
+        "cordova-plugin-appversion": {
+            "PACKAGE_NAME": "com.excellence.networkApp"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.excellence.networkApp"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.excellence.networkApp"
+        },
+        "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.excellence.networkApp"
         },
         "cordova-plugin-network-information": {
@@ -16,10 +25,7 @@
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.excellence.networkApp"
         },
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.excellence.networkApp"
-        },
-        "cordova-plugin-appversion": {
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.excellence.networkApp"
         }
     },

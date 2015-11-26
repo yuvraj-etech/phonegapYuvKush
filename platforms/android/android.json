@@ -5,11 +5,29 @@
     },
     "config_munge": {
         "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"RareloopAppVersion\"><param name=\"android-package\" value=\"com.rareloop.cordova.appversion.RareloopAppVersion\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
             "res/xml/config.xml": {
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
                             "count": 1
                         },
                         {
@@ -21,7 +39,7 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -36,21 +54,20 @@
                         }
                     ]
                 }
-            },
-            "config.xml": {
-                "parents": {
-                    "/*": [
-                        {
-                            "xml": "<feature name=\"RareloopAppVersion\"><param name=\"android-package\" value=\"com.rareloop.cordova.appversion.RareloopAppVersion\" /></feature>",
-                            "count": 1
-                        }
-                    ]
-                }
             }
         }
     },
     "installed_plugins": {
-        "cordova-plugin-whitelist": {
+        "cordova-plugin-appversion": {
+            "PACKAGE_NAME": "com.excellence.networkApp"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.excellence.networkApp"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.excellence.networkApp"
+        },
+        "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.excellence.networkApp"
         },
         "cordova-plugin-network-information": {
@@ -59,20 +76,52 @@
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.excellence.networkApp"
         },
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.excellence.networkApp"
-        },
-        "cordova-plugin-appversion": {
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.excellence.networkApp"
         }
     },
     "dependent_plugins": {},
     "modules": [
         {
-            "file": "plugins/cordova-plugin-whitelist/whitelist.js",
-            "id": "cordova-plugin-whitelist.whitelist",
-            "pluginId": "cordova-plugin-whitelist",
-            "runs": true
+            "file": "plugins/cordova-plugin-appversion/www/app-version.js",
+            "id": "cordova-plugin-appversion.RareloopAppVersion",
+            "pluginId": "cordova-plugin-appversion",
+            "clobbers": [
+                "AppVersion"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-device/www/device.js",
+            "id": "cordova-plugin-device.device",
+            "pluginId": "cordova-plugin-device",
+            "clobbers": [
+                "device"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-dialogs/www/notification.js",
+            "id": "cordova-plugin-dialogs.notification",
+            "pluginId": "cordova-plugin-dialogs",
+            "merges": [
+                "navigator.notification"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-dialogs/www/android/notification.js",
+            "id": "cordova-plugin-dialogs.notification_android",
+            "pluginId": "cordova-plugin-dialogs",
+            "merges": [
+                "navigator.notification"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+            "id": "cordova-plugin-inappbrowser.inappbrowser",
+            "pluginId": "cordova-plugin-inappbrowser",
+            "clobbers": [
+                "cordova.InAppBrowser.open",
+                "window.open"
+            ]
         },
         {
             "file": "plugins/cordova-plugin-network-information/www/network.js",
@@ -100,20 +149,10 @@
             ]
         },
         {
-            "file": "plugins/cordova-plugin-device/www/device.js",
-            "id": "cordova-plugin-device.device",
-            "pluginId": "cordova-plugin-device",
-            "clobbers": [
-                "device"
-            ]
-        },
-        {
-            "file": "plugins/cordova-plugin-appversion/www/app-version.js",
-            "id": "cordova-plugin-appversion.RareloopAppVersion",
-            "pluginId": "cordova-plugin-appversion",
-            "clobbers": [
-                "AppVersion"
-            ]
+            "file": "plugins/cordova-plugin-whitelist/whitelist.js",
+            "id": "cordova-plugin-whitelist.whitelist",
+            "pluginId": "cordova-plugin-whitelist",
+            "runs": true
         }
     ]
 }
