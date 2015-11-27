@@ -27,6 +27,11 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.excellence.networkApp"
+        },
+        "phonegap-facebook-plugin": {
+            "APP_ID": "547552195393374",
+            "APP_NAME": "untilcrimson1.0",
+            "PACKAGE_NAME": "com.excellence.networkApp"
         }
     },
     "dependent_plugins": {}

@@ -65,7 +65,7 @@
 <button class="btn  btn-social btn-google" ng-click="googleLogin()">
     <span class="fa fa-google"></span> Sign in with Google
   </button><br><br>
-<button class="btn  btn-social btn-facebook">
+<button class="btn  btn-social btn-facebook" ng-click="facebook()">
     <span class="fa fa-facebook"></span> Sign in with Facebook
   </button><br><br>
 </div>
@@ -75,7 +75,16 @@
       <br>  
 Name :{{googleData.name}}<br>Email :{{googleData.email}}<br>
 </div></div>
-</div>
+</div><br>
+<div class="panel panel-default">
+<div class="container">
+        <div class="panel panel-default">
+      <br>  
+ID :{{fb_data.id}}<br>Name :{{fb_data.name}}<br>
+</div></div>
+</div><br>
+<button type="button" class="btn btn-info" ng-click="logout()">Facebook LogOut</button></div>
+
         
 
 
